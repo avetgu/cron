@@ -1,16 +1,13 @@
-# Dockerfile for test-logs
-
-# BUILD-USING:        docker build -t test-logs .
-# RUN-USING:          docker run  -d -v /t-logs --name t-logs test-logs
-# INSPECT-USING:      docker run -t -i  --volumes-from t-logs ubuntu:latest /bin/bash
-
 FROM ubuntu:latest
+
+MAINTAINER Robert Wilkinson
+LABEL Name=games-with-words-cron Version=0.0.1 
+
 RUN apt-get update
 RUN apt-get -qq update
 RUN apt-get install -y nodejs cron python2.7
 # TODO could uninstall some build dependencies
 
-# fucking debian installs `node` as `nodejs`
 RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 10
 
