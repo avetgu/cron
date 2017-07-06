@@ -4,6 +4,7 @@ MAINTAINER Robert Wilkinson
 LABEL Name=games-with-words-cron Version=0.0.1 
 
 RUN apt-get update
+RUN apt-get install nano
 RUN apt-get -qq update
 RUN apt-get install -y nodejs cron python2.7
 # TODO could uninstall some build dependencies
