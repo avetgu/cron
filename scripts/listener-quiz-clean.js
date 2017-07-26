@@ -12,4 +12,4 @@ const axiosListenerQuiz = Axios.create({
 
 axiosListenerQuiz.post('/clean')
   .then(function (res) {})
-  .catch(function (err) {});
+  .catch(function (err) { console.log(err) });
