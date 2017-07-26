@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM node:latest
 
 MAINTAINER Robert Wilkinson
 LABEL Name=games-with-words-cron Version=0.0.1 
@@ -18,9 +18,11 @@ RUN chmod +x /usr/bin/cron.sh
 
 ADD ./crontab /etc/cron.d/cron-jobs
 ADD ./scripts /scripts/
+ADD ./package.json /scripts/package.json
 RUN chmod 0644 /etc/cron.d/cron-jobs
 RUN chmod 0644 /scripts/*
 RUN chmod +x /scripts/*
+RUN cd /scripts && npm install --production -s
 
 RUN touch /var/log/cron.log
 
