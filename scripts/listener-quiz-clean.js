@@ -5,8 +5,8 @@ const Axios = require('axios');
 const axiosListenerQuiz = Axios.create({
   baseURL: `${process.env.API_ADDRESS}/listener-quiz`,
   auth: {
-    username: 'gwwl3',
-    password: 'Amwtb2016!'
+    username: 'your_username',
+    password: 'your_password'
   }
 });
 
